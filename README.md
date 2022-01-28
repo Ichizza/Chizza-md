@@ -64,5 +64,10 @@ after running it you need to scan the qr
 > Enjoyyy
 
 ## Last
-
-* [`YOUR IMPERFECTION`]
+####THANKS TO
+* [`ALLAH SWT`]
+* [`NURUTOMO`]
+* [`TOBZ`]
+* [`I'm Ra`]
+* [`WANS`]
+* [`ILHAM`]
