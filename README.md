@@ -72,3 +72,4 @@ after running it you need to scan the qr
 * [`I'm Ra`]
 * [`WANS`]
 * [`ILHAM`]
+* [`DIMAS (DMS)`]
