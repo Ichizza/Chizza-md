@@ -21,6 +21,7 @@
 
 ## Note
 - Problem born by the user
+- Change The Information <a href="https://github.com/Ichizza/Chizza-md/blob/main/database.json">Here</a>
 
 ## This Project Needed
 <a href="https://nodejs.org/en/">Nodejs</a>
