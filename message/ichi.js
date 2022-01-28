@@ -1,6 +1,7 @@
 /*
 Base Baileys-Md By Ichi
 Free To Use 
+Give Me Credit Please
 
 Don't Sell It!!
 */
@@ -201,8 +202,11 @@ if (isOwner){
 
 //----------------------------------------------------------------------------------------------
 //MENU
+
+// Please Don't Change This T_T	    
+	    
 const menuBut = [
-    {index: 1, urlButton: {displayText: 'Source Code', url: 'https://github.com/ichizza/Chizza-md'}},
+    {index: 1, urlButton: {displayText: 'Source Code', url: 'https://github.com/ichizza/Chizza-md'}}, // Please Don't Change This T_T	 
     {index: 2, callButton: {displayText: 'Owner', phoneNumber: '+6285755495437'}},
     {index: 3, quickReplyButton: {displayText: 'MENU', id: prefix+'allmenu'}},
     {index: 4, quickReplyButton: {displayText: 'RULES', id: prefix+'rules'}},
