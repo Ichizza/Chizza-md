@@ -65,7 +65,7 @@ after running it you need to scan the qr
 > Enjoyyy
 
 ## Last
-####THANKS TO
+###THANKS TO
 * [`ALLAH SWT`]
 * [`NURUTOMO`]
 * [`TOBZ`]
