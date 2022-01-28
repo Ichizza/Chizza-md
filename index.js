@@ -7,6 +7,7 @@ const figlet = require('figlet')
 const lolcatjs = require('lolcatjs')
 const fs = require("fs")
 
+//Thanks To Nurutomo And Tobz
 require('./message/ichi.js')
 nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
 
@@ -18,8 +19,8 @@ nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
             logger: pino({ level: 'silent' }),
             printQRInTerminal: true,
             auth: state,
-            browser: ['Ichi Base', 'Safari', '3.0'],
-            // implement to handle retries
+            browser: ['Ichi Base', Chrome', '3.0'],
+           
             getMessage: async key => {
                 return {
                     conversation: 'hello'
