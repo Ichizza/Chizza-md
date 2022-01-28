@@ -1,0 +1,40 @@
+{
+  "name": "bilis-md",
+  "version": "1.0.0",
+  "description": "Coba anying",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "md"
+  ],
+  "author": "Ichi",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "axios": "^0.25.0",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.10",
+    "child_process": "^1.0.2",
+    "child-process": "^1.0.2",
+    "figlet": "^1.5.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "hxz-api": "^1.0.1",
+    "lolcatjs": "^2.4.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.34",
+    "node-tesseract-ocr": "^2.2.1",
+    "node-url-shortener": "^2.0.1",
+    "qs": "^6.10.3",
+    "tinyurl": "^1.1.7",
+    "translate-google": "^1.5.0",
+    "unofficial-carbon-now": "^1.0.6",
+    "wa-sticker-formatter": "^4.2.0",
+    "xfarr-api": "^1.0.3",
+    "yt-search": "^2.10.3"
+  }
+}
