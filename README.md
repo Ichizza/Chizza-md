@@ -33,7 +33,7 @@ Clone this project
 
 ```
 > git clone https://github.com/Ichizza/Chizza.md
-> cd chizza-md
+> cd Chizza-md
 ```
 
 Install the script:
