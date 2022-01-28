@@ -1,7 +1,7 @@
 {
   "name": "bilis-md",
   "version": "1.0.0",
-  "description": "Coba anying",
+  "description": "あの日 ⛅",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
