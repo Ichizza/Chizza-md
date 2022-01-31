@@ -8,7 +8,6 @@
 <a href="https://github.com/Ichizza"><img title="Author" src="https://img.shields.io/badge/Author-Ichizza-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-
 <a href="https://github.com/Ichizza/Chizza-md/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Ichizza/Chizza-md?color=red&style=flat-square"></a>
 <a href="https://github.com/Ichizza/Chizza-md/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Ichizza/Chizza-md?color=red&style=flat-square"></a>
 <a href="https://github.com/Ichizza/Chizza-md/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Ichizza/Chizza-md?label=Watchers&color=blue&style=flat-square"></a>
