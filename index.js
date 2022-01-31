@@ -19,7 +19,7 @@ nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
             logger: pino({ level: 'silent' }),
             printQRInTerminal: true,
             auth: state,
-            browser: ['Ichi Base', Chrome', '3.0'],
+            browser: ['Ichi Base', 'Chrome', '3.0'],
            
             getMessage: async key => {
                 return {
