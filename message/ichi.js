@@ -1069,13 +1069,18 @@ case prefix+"instagram":
     await adReply(ind.wait(), "Instagram ", `~> Request By ${pushname}`, msg)
 try {
 
-    const getig = await xfar.Instagram(q)
+    const getig = await hxz.igdl(q)
 let gasdfghasfghasfy = `┌──「 *INSTAGRAM* 」
 ├ *Request By:* ${pushname}
 └──「 *I C Z A* 」`
 
 for (i of getig.medias) {
-sendFileFromUrl(from, i.url, gasdfghasfghasfy)
+	if (i.type == 'video') {
+ichi.sendMessage(from, {video: {url: i.downloadUrl}, caption: gasdfghasfghasfy}, {quoted: msg})
+	} else {
+
+ichi.sendMessage(from, {image: {url: i.downloadUrl}, caption: gasdfghasfghasfy}, {quoted: msg})		
+	}
 }
 
 } catch (err) {
