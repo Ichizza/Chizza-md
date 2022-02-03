@@ -230,7 +230,7 @@ await ichi.sendMessage(from, {caption: `*「ICHIZZA」*
 Hai Kak ${pushname}.
 Saya Ichizza, Silahkan Pilih Pilihan Fitur Yang Ada.
 
-Terima Kasih Sudah Menjadi Teman Aku!`, location: {jpegThumbnail: fs.readFileSync("./assets/thumb.jpg")}, templateButtons: menuBut, footer: 'ᴮᵉᵗᵃ ᵂʰᵃᵗˢᵃᵖᵖ ᴮᵒᵗ ᴹᵘˡᵗⁱ ᴰᵉᵛⁱᶜᵉ ❤️‍🔥'}, )
+Terima Kasih Sudah Menjadi Teman Aku!`, location: {jpegThumbnail: fs.readFileSync("./assets/header.jpg")}, templateButtons: menuBut, footer: 'ᴮᵉᵗᵃ ᵂʰᵃᵗˢᵃᵖᵖ ᴮᵒᵗ ᴹᵘˡᵗⁱ ᴰᵉᵛⁱᶜᵉ ❤️‍🔥'}, )
 
 break
 
