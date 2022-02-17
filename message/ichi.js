@@ -93,7 +93,18 @@ module.exports = async(ichi, msg) => {
 
     const command = chats.toLowerCase().split(' ')[0] || ''
         const isCmd = chats.startsWith(prefix)
+//Call Response
+ichi.ws.on("CB:call", async function (node) {
+if(node.content[0].tag === "terminate") {
+ichi.sendMessage(node.attrs.from, {text: `Kamu Telah Melanggar Rules Maka Kamu Akan Terkena *Blokir*!\n\nHubungi Owner Untuk Membuka Kembali Akses!`}).then(anu => {
 
+
+ichi.updateBlockStatus(node.attrs.from, "block")
+
+})
+}
+
+})
 //OCR
 const configocr = {
     lang: "eng",
