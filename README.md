@@ -22,6 +22,12 @@
 - Problem born by the user
 - Change The Information <a href="https://github.com/Ichizza/Chizza-md/blob/main/database.json">Here</a>
 
+## Donate
+
+### - Buy Me A Cake
+<a href="https://saweria.co/ichizza"><img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/71b9e4a5bf4c45f.png" style="width: 15%"></a>
+
+
 ## This Project Needed
 <a href="https://nodejs.org/en/">Nodejs</a>
 <a href="https://www.ffmpeg.org/">FFMPEG</a>
