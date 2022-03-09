@@ -31,7 +31,7 @@
 Clone this project
 
 ```
-> git clone https://github.com/Ichizza/Chizza.md
+> git clone https://github.com/Ichizza/Chizza-md
 > cd Chizza-md
 ```
 
