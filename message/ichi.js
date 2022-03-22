@@ -64,8 +64,8 @@ module.exports = async(ichi, msg) => {
     const groupMetadata = isGroup ? await ichi.groupMetadata(from) : ''  
     const groupMembers = isGroup ? groupMetadata.participants : ''
     const groupAdmins = isGroup ? ind.getGroupAdmins(groupMembers) : ''
-	const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
-	const isGroupAdmins = groupAdmins.includes(sender.split(":")[0]+"@s.whatsapp.net") || false
+    const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
+    const isGroupAdmins = groupAdmins.includes(sender.split(":")[0]+"@s.whatsapp.net") || false
   
     const isImage = (type == 'imageMessage')
     const isVideo = (type == 'videoMessage')
