@@ -11,7 +11,7 @@ const {
     downloadContentFromMessage, 
     generateWAMessageFromContent,
     proto,
-} = require("@adiwajshing/baileys-md")
+} = require("@adiwajshing/baileys")
 const moment = require("moment-timezone")
 const fs = require("fs")
 const axios = require("axios")
