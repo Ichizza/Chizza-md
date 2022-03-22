@@ -15,7 +15,7 @@
   "author": "Ichi",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "axios": "^0.25.0",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.10",
