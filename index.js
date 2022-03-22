@@ -1,4 +1,4 @@
-const { default: makeWASocket, DisconnectReason, AnyMessageContent, delay, useSingleFileAuthState } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, DisconnectReason, AnyMessageContent, delay, useSingleFileAuthState } = require('@adiwajshing/baileys')
 const {Boom} = require("@hapi/boom")
 const pino = require("pino")
 const { state, saveState } = useSingleFileAuthState('./ichi.json')
