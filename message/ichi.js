@@ -469,7 +469,7 @@ if (chats.includes("instagram.com") && chats.includes("https") && !isCmd) {
     const getig = await instagram(urlig);
     let gasdfghasfghasfy = `┌──「 *INSTAGRAM* 」
 ├ *Request By:* ${pushname}
-└──「 *AISHA* 」`;
+└──「 *ICHIZZA* 」`;
 
     for (i of getig.data) {
       if (i.type == "video") {
@@ -505,7 +505,7 @@ if (chats.includes("tiktok.com") && chats.includes("https") && !isCmd) {
 }
 
 if (chats.toLowerCase() == "bot") {
-  textImg(`Hai, aku Aisha!\nGunakan #help untuk memulai menggunakan Aisha Bot.\nOtsu~`)
+  textImg(`Hai, aku ICHIZZA!\nGunakan #help untuk memulai menggunakan Ichizza.\nOtsu~`)
 }
     //----------------------------------------------------------------------------------------------
     //MENU
@@ -572,9 +572,9 @@ if (chats.toLowerCase() == "bot") {
         thumb = fs.readFileSync("./assets/header.jpg")
         const thumbs = await Buffer.from(thumb, "base64")
         await ichi.sendMessage(from, {
-          caption: `*「AISHA」*
+          caption: `*「ICHIZZA」*
 Hai Kak ${pushname}.
-Saya Aisha, Silahkan Pilih Pilihan Fitur Yang Ada.
+Saya Ichizza, Silahkan Pilih Pilihan Fitur Yang Ada.
 
 Terima Kasih Sudah Menjadi Teman Aku!`,
           location: { jpegThumbnail: thumbs },
@@ -1134,7 +1134,7 @@ sendFileFromUrl(from, data.url)
               ? getigstalk.graphql.user.biography
               : "No Bio"
           } \n│\n`;
-          cap += `└──「 *AISHA* 」`;
+          cap += `└──「 *ICHIZZA* 」`;
           sendFileFromUrl(
             from,
             getigstalk.graphql.user.profile_pic_url_hd,
@@ -1353,7 +1353,7 @@ break
 ├ *Title:* ${getmp3.title}
 ├ *Size:* ${getmp3.size_mp3}
 │
-└──「 *AISHA* 」`;
+└──「 *ICHIZZA* 」`;
 
           sendFileFromUrl(from, getmp3.thumb, sifugtgfrasdjkfhsdj, msg);
           sendFileFromUrl(from, gmp3.url, sifugtgfrasdjkfhsdj, msg);
@@ -1381,7 +1381,7 @@ break
 ├ *Title:* ${getmp4.title}
 ├ *Size:* ${getmp4.size}
 │
-└──「 *AISHA* 」`;
+└──「 *ICHIZZA* 」`;
           sendFileFromUrl(from, getmp4.thumb, asjdghfashgfashgf, msg);
           sendFileFromUrl(from, gmp4.url, asjdghfashgfashgf, msg);
         } catch (err) {
@@ -1407,7 +1407,7 @@ break
             afhasuyduytsduyt += `├ *Title:* ${i.title}\n`;
             afhasuyduytsduyt += `├ *Url* ${i.url}\n│\n`;
           }
-          afhasuyduytsduyt += "└──「 *AISHA* 」";
+          afhasuyduytsduyt += "└──「 *ICHIZZA* 」";
           sendFileFromUrl(from, getyts.all[0].image, afhasuyduytsduyt);
         } catch (err) {
           textImg(ind.err(chats.split(" ")[0].split(prefix)[1], err));
@@ -1432,7 +1432,7 @@ break
 ├ *Title:* ${getplay.title}
 ├ *Size:* ${getplay.size_mp3}
 │
-└──「 *AISHA* 」`;
+└──「 *ICHIZZA* 」`;
 
           sendFileFromUrl(from, getplay.thumb, ashgasfgashfash, msg);
           sendFileFromUrl(from, glink.url, ashgasfgashfash, msg);
@@ -1488,7 +1488,7 @@ break
           const getig = await instagram(q);
           let gasdfghasfghasfy = `┌──「 *INSTAGRAM* 」
 ├ *Request By:* ${pushname}
-└──「 *AISHA* 」`;
+└──「 *ICHIZZA* 」`;
 
           for (i of getig.data) {
             if (i.type == "video") {
@@ -1551,7 +1551,7 @@ break
 ├ *Potention:* ${data.Infogempa.gempa.Potensi}
 ├ *Effect:* ${data.Infogempa.gempa.Dirasakan}
 │
-└──「 *AISHA* 」 `;
+└──「 *ICHIZZA* 」 `;
 
           sendFileFromUrl(
             from,
