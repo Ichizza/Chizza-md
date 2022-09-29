@@ -1,21 +1,26 @@
-const { default: makeWASocket, DisconnectReason, AnyMessageContent, delay, useSingleFileAuthState } = require('@adiwajshing/baileys')
+const { default: makeWASocket, DisconnectReason, AnyMessageContent, delay, useMultiFileAuthState  } = require('@adiwajshing/baileys')
 const {Boom} = require("@hapi/boom")
 const pino = require("pino")
-const { state, saveState } = useSingleFileAuthState('./ichi.json')
 const color = require('./lib/color')
 const figlet = require('figlet')
 const lolcatjs = require('lolcatjs')
 const fs = require("fs")
+const yargs = require('yargs/yargs')
+global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+
+if (opts['server']) require('./app')
 
 //Thanks To Nurutomo And Tobz
 require('./message/ichi.js')
 nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
-
- 
+async function glbl() {
+ const {state, saveCreds} = await useMultiFileAuthState ('./session')
 
     async function startSock()  {
     
         const sock = makeWASocket({
+                     version: [2, 2208, 7],
+
             logger: pino({ level: 'silent' }),
             printQRInTerminal: true,
             auth: state,
@@ -23,7 +28,7 @@ nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
            
             getMessage: async key => {
                 return {
-                    conversation: 'hello'
+                  
                 }
             }
         })
@@ -34,14 +39,17 @@ nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
         })
     
         sock.ev.on('connection.update', (update) => {
-            const { connection, lastDisconnect } = update
+        	if (global.qr !== update.qr) {
+            global.qr = update.qr
+        }
+                        const { connection, lastDisconnect } = update
             if (connection === 'close') {
-               
+          
                 lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut ? startSock() : console.log('connection logged out...')
             }
         })
     
-        sock.ev.on('creds.update', () => saveState)
+        sock.ev.on('creds.update', await saveCreds)
         console.log('------------------------------------------------')
         lolcatjs.fromString(color(figlet.textSync('I C H I', { horizontalLayout: 'full' })))
         console.log('------------------------------------------------')
@@ -51,7 +59,9 @@ nocache('./message/ichi.js', module => console.log(`'${module}' Updated!`))
     }
     
     startSock()
-    
+
+}
+glbl()
    /**
  * Uncache if there is file change
  * @param {string} module Module name or path
