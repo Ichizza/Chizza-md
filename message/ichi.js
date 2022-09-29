@@ -374,6 +374,7 @@ lgr(msg)
     };
     // Welcome
     //IDK Why But Sometimes It Become Spam
+   //API Url Gonna Updated Soon
     /*
     ichi.ev.on("group-participants.update", async (anu) => {
       console.log(anu);
