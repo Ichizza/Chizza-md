@@ -54,7 +54,7 @@ const {
   uploadImages,
 } = require("../lib/function.js");
 const { pinterest, igstalk, igdl, snobg} = require("../lib/scrape.js");
-const { ytmp3, ytmp4 } = require("../lib/yt.js");
+const { yt } = require("../lib/yt.js");
 const ind = require("./ind.js");
 const {instagram} = require ("../lib/igpost.js")
 //const {fb} = require("../lib/fb")
@@ -568,20 +568,34 @@ if (chats.toLowerCase() == "bot") {
         break;
 
       case prefix + "menu":
-      case prefix + "help":
+          case prefix + "help":
         thumb = fs.readFileSync("./assets/header.jpg")
-        const thumbs = await Buffer.from(thumb, "base64")
-        await ichi.sendMessage(from, {
-          caption: `*「ICHIZZA」*
+        const thumbas = await Buffer.from(thumb, "base64")
+        const templateMessage = {
+          viewOnceMessage: {
+            message: {
+              templateMessage: {
+                hydratedTemplate: {
+                  hydratedContentText: `*「AISHA」*
 Hai Kak ${pushname}.
-Saya Ichizza, Silahkan Pilih Pilihan Fitur Yang Ada.
-
-Terima Kasih Sudah Menjadi Teman Aku!`,
-          location: { jpegThumbnail: thumbs },
-          templateButtons: menuBut,
-          footer: "ᴮᵉᵗᵃ ᵂʰᵃᵗˢᵃᵖᵖ ᴮᵒᵗ ᴹᵘˡᵗⁱ ᴰᵉᵛⁱᶜᵉ ❤️‍🔥",
-        });
-
+Saya Aisha, Silahkan Pilih Pilihan Fitur Yang Ada.
+                  
+Terima Kasih Sudah Menjadi Teman Aku!` ,
+hydratedFooterText: "ᴮᵉᵗᵃ ᵂʰᵃᵗˢᵃᵖᵖ ᴮᵒᵗ ᴹᵘˡᵗⁱ ᴰᵉᵛⁱᶜᵉ ❤️‍🔥",
+                  hydratedButtons: menuBut,
+                  locationMessage: { jpegThumbnail: thumbas }
+                },
+              contextInfo: {
+            quotedMessage: msg.message
+            }
+          },
+          
+            }
+          }
+        }
+       
+ await ichi.relayMessage(from, templateMessage, {})
+        
         break;
 
       case prefix + "allmenu":
@@ -1346,17 +1360,23 @@ break
           msg
         );
         try {
-          const getmp3 = await hxz.youtube(q);
-          const gmp3 = await ytmp3(q);
+          const gmp3 = await yt(q);
+          const {data: datmp3} = await axios.get(gmp3.url, {responseType: "arraybuffer"})
+          await fs.writeFileSync("ytmp3.mp4", datmp3)
           let sifugtgfrasdjkfhsdj = `┌──「 *YTMP3* 」
 │
-├ *Title:* ${getmp3.title}
-├ *Size:* ${getmp3.size_mp3}
+├ *Title:* ${gmp3.title}
+├ *Size:* ${gmp3.size}
 │
-└──「 *ICHIZZA* 」`;
+└──「 *AISHA* 」`;
+          sendFileFromUrl(from, gmp3.thumb, sifugtgfrasdjkfhsdj, msg);
+          ichi.sendMessage(from, {audio: fs.readFileSync("ytmp3.mp4"), mimetype: "audio/mp4"}, {quoted: msg})
+          /*await exec("ffmpeg -i ytmp3.mp4 ytmp3.mp3", (err, stdout) => {
+            if (err) return textImg(ind.err(chats.split(" ")[0].split(prefix)[1], err));
+            if (stdout) return 
+            
+          });*/
 
-          sendFileFromUrl(from, getmp3.thumb, sifugtgfrasdjkfhsdj, msg);
-          sendFileFromUrl(from, gmp3.url, sifugtgfrasdjkfhsdj, msg);
         } catch (err) {
           textImg(ind.err(chats.split(" ")[0].split(prefix)[1], err));
         }
@@ -1373,20 +1393,20 @@ break
           `~> Request By ${pushname}`,
           msg
         );
-        try {
-          const getmp4 = await hxz.youtube(q);
-          const gmp4 = await ytmp4(q);
+         try {
+          const gmp4 = await yt(q);
           let asjdghfashgfashgf = `┌──「 *YTMP4* 」
 │
-├ *Title:* ${getmp4.title}
-├ *Size:* ${getmp4.size}
+├ *Title:* ${gmp4.title}
+├ *Size:* ${gmp4.size}
 │
-└──「 *ICHIZZA* 」`;
-          sendFileFromUrl(from, getmp4.thumb, asjdghfashgfashgf, msg);
+└──「 *AISHA* 」`;
+          sendFileFromUrl(from, gmp4.thumb, asjdghfashgfashgf, msg);
           sendFileFromUrl(from, gmp4.url, asjdghfashgfashgf, msg);
         } catch (err) {
           textImg(ind.err(chats.split(" ")[0].split(prefix)[1], err));
         }
+
 
         break;
 
@@ -1425,20 +1445,24 @@ break
         );
         try {
           const waitget = await yts(q);
-          const getplay = await hxz.youtube(waitget.all[0].url);
-          const glink = await ytmp3(waitget.all[0].url);
+          const glink = await yt(waitget.all[0].url);
+          const {data: datm} = await axios.get(glink.url, {responseType: "arraybuffer"})
+          await fs.writeFileSync("temp/"+"ytmp3.mp4", datm)
+
           let ashgasfgashfash = `┌──「 *PLAY* 」
 │
-├ *Title:* ${getplay.title}
-├ *Size:* ${getplay.size_mp3}
+├ *Title:* ${glink.title}
+├ *Size:* ${glink.size}
 │
-└──「 *ICHIZZA* 」`;
+└──「 *AISHA* 」`;
 
-          sendFileFromUrl(from, getplay.thumb, ashgasfgashfash, msg);
-          sendFileFromUrl(from, glink.url, ashgasfgashfash, msg);
+          await sendFileFromUrl(from, glink.thumb, ashgasfgashfash, msg);
+          ichi.sendMessage(from, {audio: fs.readFileSync("temp/"+"ytmp3.mp4"), mimetype: "audio/mp4"}, {quoted: msg})
+          fs.unlinkSync("temp/ytmp3.mp4")
         } catch (err) {
           textImg(ind.err(chats.split(" ")[0].split(prefix)[1], err));
         }
+
 
         break;
 
