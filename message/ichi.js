@@ -63,6 +63,10 @@ const {create: tikitoko} = require("../lib/tiktok")
 multi = true;
 module.exports = async (ichi, msg) => {
   try {
+    const nameUser = {
+      displayName: msg.pushName,
+      quotedName: (await store.loadMessage(msg.key.remoteJid, msg.message.extendedTextMessage?.contextInfo?.stanzaId)) || ichi.user.name
+    }
     const time = moment(Date.now())
       .tz("Asia/Jakarta")
       .locale("id")
