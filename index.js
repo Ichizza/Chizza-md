@@ -1,4 +1,4 @@
-const { default: makeWASocket, DisconnectReason, AnyMessageContent, delay, useMultiFileAuthState  } = require('@adiwajshing/baileys')
+const { default: makeWASocket, DisconnectReason, AnyMessageContent, delay, useMultiFileAuthState, makeInMemoryStore } = require('@adiwajshing/baileys')
 const {Boom} = require("@hapi/boom")
 const pino = require("pino")
 const color = require('./lib/color')
@@ -7,8 +7,14 @@ const lolcatjs = require('lolcatjs')
 const fs = require("fs")
 const yargs = require('yargs/yargs')
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+global.store = makeInMemoryStore(pino({ level: "silent" }))
 
 if (opts['server']) require('./app')
+
+store.readFromFile("./ichi_session.json")
+setInterval(() => {
+  store.writeToFile("./ichi_session.json")
+})
 
 //Thanks To Nurutomo And Tobz
 require('./message/ichi.js')
@@ -32,6 +38,7 @@ async function glbl() {
                 }
             }
         })
+        store.bind(sock.ev)
         sock.ev.on('messages.upsert', async m => {
             if (!m.messages) return
             const msg = m.messages[0]
